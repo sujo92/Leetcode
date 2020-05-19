@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+class StockSpanner {
+    Deque<int[]> stack;
+    private static int index;
+    int res;
+    public StockSpanner() {
+        stack = new ArrayDeque<>(); //price,index
+        index=0;
+        res=0;
+    }
+
+    public int next(int price) {
+        if(stack.isEmpty()){
+            stack.push(new int[]{price,index});
+            res=1;
+        }else{
+            if(stack.peek()[0] > price){
+                stack.push(new int[]{price,index});
+                res=1;
+            }else{
+                while(!stack.isEmpty() && stack.peek()[0] <= price){
+                    stack.pop();
+                }
+                res = stack.isEmpty()? index+1 : index - stack.peek()[1];
+                stack.push(new int[]{price,index});
+            }
+        }
+        index++;
+        return res;
+    }
+
+}
+
