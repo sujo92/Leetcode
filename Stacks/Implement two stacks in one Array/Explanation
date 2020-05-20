@@ -1,0 +1,6 @@
+Create one array
+for two stacks have two top pointer
+one pointing to -1 of array
+one to size of array
+as elemets are pushed, update top pointer depending on which stack you are pushing on and put element in array
+stack overflow occurs when next of current pointer is already occupied by other pointer that means no more space available in array.
