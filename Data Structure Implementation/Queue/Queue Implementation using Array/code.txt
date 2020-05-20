@@ -1,10 +1,10 @@
 package com.company;
 
 public class Queue {
-    int[] q;
-    int front;
-    int end;
-    int size;
+    private int[] q;
+    private int front;
+    private int end;
+    private int size;
 
     public Queue(int size){
         q = new int[size];

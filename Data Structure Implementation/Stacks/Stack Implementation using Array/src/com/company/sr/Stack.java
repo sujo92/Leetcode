@@ -1,9 +1,9 @@
 package com.company.sr;
 
 public class Stack {
-    int[] stack;
-    int top=-1;
-    int size;
+    private int[] stack;
+    private int top=-1;
+    private int size;
 
     public Stack(int size){
         this.size=size;
