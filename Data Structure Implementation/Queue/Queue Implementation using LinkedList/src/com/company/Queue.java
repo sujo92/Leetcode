@@ -11,8 +11,8 @@ public class Queue {
         }
     }
 
-    Node head;
-    Node tail;
+    private Node head;
+    private Node tail;
 
     public Queue(){
         head = null;
