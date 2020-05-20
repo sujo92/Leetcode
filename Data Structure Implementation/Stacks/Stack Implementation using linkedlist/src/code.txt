@@ -11,7 +11,7 @@ public class Stack {
         }
     }
 
-    Node root;
+    private Node root;
 
     public boolean isEmpty(){
         if(root==null)
