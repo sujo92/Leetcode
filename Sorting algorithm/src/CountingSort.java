@@ -29,8 +29,8 @@ public class CountingSort {
             count[i] = count[i-1] + count[i];
         }
 
-        //create new sorted array
-        for(int i=0; i<arr.length; i++){
+        //create new sorted array - start from back of arr for stable sorting
+        for(int i=arr.length-1; i>=0; i--){
             int curr = arr[i]-min;
             int currIndex = count[curr]-1;
             output[currIndex] = arr[i];
