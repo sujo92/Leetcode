@@ -1,8 +1,11 @@
 public class MergeSort {
     public static void main(String[] args) {
+        
         int[] arr= new int[]{4,3,2,10,12,1,5,6};
         int[] merged = new int[arr.length];
+
         sort(arr, 0 , arr.length-1, merged);
+
         for(int a: merged){
             System.out.println(a);
         }
