@@ -1,0 +1,47 @@
+import java.util.Stack;
+
+public class Test {
+    public static void main(String[] args) {
+        String A="(a*b)+(b*(d+(a)))";
+        System.out.println(braces(A));
+    }
+        public static int braces(String A) {
+            Stack<String> stack = new Stack<>();
+            String operand1;
+            String operator;
+            String operand2;
+
+            for(int i=0; i<A.length(); i++){
+                if(A.charAt(i) != ')'){
+                    stack.push(Character.toString(A.charAt(i)));
+                }
+                else{
+                    if(stack.isEmpty() || stack.peek().equals("("))
+                        return 1;
+                    else
+                        operand1 = stack.pop();
+
+                    if(stack.isEmpty() || stack.peek().equals("("))
+                        return 1;
+                    else
+                        operator = stack.pop();
+
+                    if(stack.isEmpty() || stack.peek().equals("("))
+                        return 1;
+                    else
+                        operand2 = stack.pop();
+
+                    if(stack.isEmpty())
+                        return 1;
+                    else
+                        stack.pop();
+
+                    String expression = '('+operand1+operator+operand2+')';
+                    stack.push(expression);
+                }
+
+            }
+            return 0;
+        }
+
+}
